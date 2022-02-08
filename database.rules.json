@@ -1,0 +1,17 @@
+{
+  "rules": {
+    "images": {
+      "$uid": {
+        ".write": "$uid === auth.uid",
+        ".read": "auth.uid != null"
+      }
+    },
+    "players": {
+      ".read": "auth.uid != null",
+      "$uid": {
+        ".write": "$uid === auth.uid",
+        ".read": "auth.uid != null"
+      }
+    }
+  }
+}
